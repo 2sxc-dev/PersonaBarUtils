@@ -10,9 +10,7 @@
         private const string CookieKey = "HidePersonaBar";
 
         public PersonaBarManager(INavigationManager navigationManager) : base(navigationManager)
-        {
-            SetInstance(this, true);
-        }
+        { }
 
         /// <inheritdoc/>
         public override bool Visible => !HidePersonaBar();
@@ -22,7 +20,7 @@
         public void Show() => RemoveCookie();
 
 
-        public bool HidePersonaBar()
+        private static bool HidePersonaBar()
         {
             // Retrieve the cookie from the request
             var cookie = HttpContext.Current?.Request.Cookies[CookieKey]?.Value;
@@ -30,7 +28,7 @@
             return bool.TryParse(cookie, out var result) && result;
         }
 
-        private void SetPermanentCookie()
+        private static void SetPermanentCookie()
         {
             // Create the cookie
             var cookie = new HttpCookie(CookieKey, "true");
@@ -42,7 +40,7 @@
             HttpContext.Current?.Response?.Cookies.Add(cookie);
         }
 
-        public void RemoveCookie()
+        private static void RemoveCookie()
         {
             // Retrieve the cookie
             var cookie = HttpContext.Current.Request.Cookies[CookieKey];
