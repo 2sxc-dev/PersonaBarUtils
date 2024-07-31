@@ -11,33 +11,15 @@
 
         public PersonaBarManager(INavigationManager navigationManager) : base(navigationManager)
         {
-            if (HidePersonaBar())
-                Hide();
+            SetInstance(this, true);
         }
-
-        //public PersonaBarManager Init()
-        //{
-
-        //    if (HidePersonaBar())
-        //        Hide();
-
-        //    return this;
-        //}
 
         /// <inheritdoc/>
-        public override bool Visible => false;
+        public override bool Visible => !HidePersonaBar();
 
-        public void Hide()
-        {
-            SetInstance(this, true);
-            SetPermanentCookie();
-        }
+        public void Hide() => SetPermanentCookie();
 
-        public void Show()
-        {
-            ClearInstance();
-            RemoveCookie();
-        }
+        public void Show() => RemoveCookie();
 
 
         public bool HidePersonaBar()
