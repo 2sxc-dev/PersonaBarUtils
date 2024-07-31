@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HidePersonaBar")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DNN PersonaBar utils")]
+[assembly: AssemblyDescription("dependency for PersonaBar 2sxc app to remove or re-add the PersonaBar")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HidePersonaBar")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCompany("2sic internet solutions GmbH, Switzerland")]
+[assembly: AssemblyProduct("PersonaBarUtils")]
+[assembly: AssemblyCopyright("Copyright MIT © 2sic 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
