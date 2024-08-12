@@ -12,8 +12,11 @@ namespace ToSic.Sxc.PersonaBar.Utils
             // Replace the original dnn PersonaBarContainer service with a new implementation
             services.Replace(new ServiceDescriptor(
                 typeof(IPersonaBarContainer),
-                typeof(PersonaBarManager),
+                typeof(PersonaBarContainerAdvanced),
                 ServiceLifetime.Singleton));
+
+            // Register the display service
+            services.TryAddTransient<PersonaBarManager>();
         }
     }
 }
